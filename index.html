@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>FATHOM — Deep-ocean survey institute</title>
+  <meta name="description" content="FATHOM maps the water column below the light: continuous surveys from the surface to the hadal trenches." />
+  <meta name="theme-color" content="#0a1a2b" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 32 32%27%3E%3Crect width=%2732%27 height=%2732%27 rx=%276%27 fill=%27%230a1a2b%27/%3E%3Cpath d=%27M8 10h16M8 16h10M8 22h13%27 stroke=%27%23ff8a3d%27 stroke-width=%272.5%27 stroke-linecap=%27round%27/%3E%3C/svg%3E" />
+  <link rel="stylesheet" href="/fonts/fonts.css" />
+  <link rel="stylesheet" href="/src/styles/main.css" />
+</head>
+<body>
+  <canvas id="gl" aria-hidden="true"></canvas>
+
+  <header class="top">
+    <a class="wordmark" href="#top" aria-label="FATHOM home">FATHOM</a>
+    <p class="top__tag">Deep-ocean survey institute<br />Reykjavík, Hobart, Kaohsiung</p>
+    <nav class="top__nav" aria-label="Primary">
+      <a href="#descent">The descent</a>
+      <a href="#expeditions">Expeditions</a>
+      <a href="#instruments">Instruments</a>
+      <a class="btn" href="#join">Join a descent</a>
+    </nav>
+    <output class="readout" aria-live="off" aria-label="Current depth"><span data-depth>0</span> m</output>
+  </header>
+
+  <main id="top">
+    <section class="hero" data-zone="0">
+      <h1 class="hero__title"><span class="line"><span>We map what</span></span><span class="line"><span>the light never</span></span><span class="line"><span>reaches.</span></span></h1>
+      <p class="hero__lead">FATHOM runs continuous surveys of the water column, from the sunlit surface to the hadal trenches, with moored sensors, remotely operated vehicles and free-falling landers.</p>
+      <p class="hero__hint">Scroll to descend<br />Click anywhere to ping</p>
+      <div class="marks" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+    </section>
+
+    <section class="mission" aria-labelledby="mission-h">
+      <h2 id="mission-h" class="mission__h">Most of the ocean has never been seen. We go and look.</h2>
+      <div class="mission__cols">
+        <p>Satellites see the surface. Ship sonar sees the floor. Between them is 1.3 billion cubic kilometres of water that is measured in slices and guessed in between. We fill the gaps with instruments that stay down for months and vehicles that go where the pressure forbids people.</p>
+        <p>Every survey is published raw within ninety days: pressure, temperature, salinity, oxygen, acoustic backscatter and video, registered to a shared depth grid so that one institute's twilight-zone record lines up with another's.</p>
+      </div>
+      <p class="ledger"><span>Deepest recovery <b>10 902 m</b></span><span>Sensor-days at depth, 2025 <b>41 300</b></span><span>Vehicles in service <b>6</b></span><span>Raw data published within <b>90 d</b></span></p>
+    </section>
+
+    <section id="descent" class="descent" aria-labelledby="descent-h">
+      <div class="descent__pin">
+        <h2 id="descent-h" class="visually-hidden">The descent through five light zones</h2>
+        <div class="descent__scale" aria-hidden="true"><i class="scale__pin" data-scale-pin></i><span>0 m</span><span>200</span><span>1 000</span><span>4 000</span><span>6 000</span><span>11 000</span></div>
+        <ol class="zones">
+          <li class="zone is-active" data-zone="1"><p class="zone__depth">0 – 200 m</p><h3>Sunlight</h3><p>Where photosynthesis is possible. Almost all of the ocean's fishery and nearly all of what people picture when they picture the sea.</p></li>
+          <li class="zone" data-zone="2"><p class="zone__depth">200 – 1 000 m</p><h3>Twilight</h3><p>Light fades to a blue memory. The largest animal migration on Earth happens here every night, as billions of tonnes of life rise to feed and sink at dawn.</p></li>
+          <li class="zone" data-zone="3"><p class="zone__depth">1 000 – 4 000 m</p><h3>Midnight</h3><p>No sunlight at all. Temperatures near 4 °C, pressure past 100 atmospheres. Our moorings record the slow snow of organic matter that feeds everything below.</p></li>
+          <li class="zone" data-zone="4"><p class="zone__depth">4 000 – 6 000 m</p><h3>Abyss</h3><p>The abyssal plain covers more than half the planet's surface. Flat, cold, and so sparsely sampled that a single lander deployment can describe a region the size of a country.</p></li>
+          <li class="zone" data-zone="5"><p class="zone__depth">6 000 – 11 000 m</p><h3>Hadal</h3><p>The trenches. Pressure above 1 100 atmospheres crushes most electronics; ours are oil-filled and pressure-balanced. Our deepest recovery came back from 10 902 m with four days of video.</p></li>
+        </ol>
+        <p class="descent__status" aria-hidden="true"><span data-pressure>1</span> atm · <span data-temp>22</span> °C · light <span data-light>100</span> %</p>
+      </div>
+    </section>
+
+    <section id="expeditions" class="expeditions" aria-labelledby="exp-h">
+      <h2 id="exp-h">Expeditions</h2>
+      <div class="track">
+        <article class="tile" data-tile="0"><div class="tile__media" data-seed="11"></div><h3>Kermadec Lander Array</h3><p>Eleven landers, nine months, the first continuous pressure record from a subduction trench.</p><p class="tile__meta">2025 / 9 912 m</p></article>
+        <article class="tile" data-tile="1"><div class="tile__media" data-seed="23"></div><h3>Twilight Migration Transect</h3><p>Acoustic backscatter across the North Atlantic, resolving the nightly vertical migration at 1 m resolution.</p><p class="tile__meta">2024 / 200 – 1 000 m</p></article>
+        <article class="tile" data-tile="2"><div class="tile__media" data-seed="37"></div><h3>Clarion-Clipperton Baseline</h3><p>A pre-mining baseline of the abyssal plain: sediment cores, nodule density and the fauna that lives on them.</p><p class="tile__meta">2024 / 4 400 m</p></article>
+        <article class="tile" data-tile="3"><div class="tile__media" data-seed="51"></div><h3>Reykjanes Vent Field</h3><p>Three ROV dives mapping hydrothermal plumes with a towed chemistry package.</p><p class="tile__meta">2023 / 2 300 m</p></article>
+      </div>
+    </section>
+
+    <section id="instruments" class="instruments" aria-labelledby="inst-h">
+      <h2 id="inst-h">Instruments in service</h2>
+      <table class="spec">
+        <thead><tr><th scope="col">Vehicle</th><th scope="col">Type</th><th scope="col" class="r">Rated depth</th><th scope="col" class="r">Endurance</th><th scope="col">Payload</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">Sounding</th><td>Free-fall lander</td><td class="r">11 000 m</td><td class="r">120 d</td><td>CTD, O₂, 4K camera, baited trap</td></tr>
+          <tr><th scope="row">Meridian</th><td>Work-class ROV</td><td class="r">6 000 m</td><td class="r">36 h</td><td>7-function manipulator, sediment corer</td></tr>
+          <tr><th scope="row">Drift 2</th><td>Profiling float</td><td class="r">4 000 m</td><td class="r">5 y</td><td>CTD, nitrate, backscatter</td></tr>
+          <tr><th scope="row">Lantern</th><td>Towed acoustics</td><td class="r">1 500 m</td><td class="r">—</td><td>38 / 120 / 200 kHz echosounders</td></tr>
+          <tr><th scope="row">Mooring K</th><td>Full-depth mooring</td><td class="r">9 000 m</td><td class="r">18 mo</td><td>24 sensor pods, acoustic release</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section id="join" class="join" aria-labelledby="join-h">
+      <h2 id="join-h">Join the next descent.</h2>
+      <p>We partner with universities, agencies and companies who need the water column measured properly. Berths, instrument slots and raw-data access are open for the 2027 season.</p>
+      <a class="btn btn--big" href="mailto:partners@fathom.example">partners@fathom.example</a>
+    </section>
+  </main>
+
+  <footer class="foot">
+    <p>FATHOM is a fictional institute built as a design demonstration. Depth-zone facts are real; expeditions, instruments and figures are illustrative.</p>
+    <p class="foot__grid" aria-hidden="true">Grid 12 / 2vw / 5vw</p>
+  </footer>
+
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>
